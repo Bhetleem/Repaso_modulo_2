@@ -46,6 +46,6 @@ function numberOfAttemps(numberOfClicks){
 
 
 
-button.addEventListener("click",numberOfAttemps);
+button.addEventListener("click",checkUserNumber);
 console.log("pista");
 
