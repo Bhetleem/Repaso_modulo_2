@@ -40,8 +40,7 @@ let numberOfClicks = 0;
 function numberOfAttemps(){
     numberOfClicks++;
    
-    attempt.innerHTML = `Número de intentos:  ${numberOfClicks}`;
-   
+    attempt.innerHTML = `Número de intentos:  ${numberOfClicks}`;  
 }
 
 function allFunctions(event) {
