@@ -19,33 +19,37 @@ function checkUserNumber(event){
 
     console.log(userNumberValue);
 
-    event.preventDefault();
+    // event.preventDefault();
 
     if (userNumberValue === randomNumber){
         clue.innerHTML = "Has ganado campeona";
         console.log("has ganado");
+    } else if (userNumberValue < 0){
+        clue.innerHTML = "El número debe estar entre 0 y 100";
     } else if (userNumberValue < randomNumber){
         clue.innerHTML = "Demasiado bajo";
-    } else if (userNumberValue > randomNumber){
-        clue.innerHTML = "Demasiado alto";
     } else if (userNumberValue > max){
         clue.innerHTML = "El número debe estar entre 0 y 100";
-    }
+    } else if (userNumberValue > randomNumber){
+        clue.innerHTML = "Demasiado alto";
+    } 
 }
 
 let numberOfClicks = 0;
 
-function numberOfAttemps(numberOfClicks){
+function numberOfAttemps(){
     numberOfClicks++;
    
-    attempt.innerHTML = `Número de intentos:  + ${numberOfClicks}`;
-    console.log(numberOfAttemps)
+    attempt.innerHTML = `Número de intentos:  ${numberOfClicks}`;
+   
 }
 
+function allFunctions(event) {
+    event.preventDefault();
+    checkUserNumber();
+    numberOfAttemps();
+}
 
-
-
-
-button.addEventListener("click",checkUserNumber);
+button.addEventListener("click",allFunctions);
 console.log("pista");
 
